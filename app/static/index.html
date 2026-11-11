@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Convierte medidas de forma rápida y sencilla con este conversor de unidades."
+    />
+    <title>Conversor de unidades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Conversor, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 8h15m0 0-4-4m4 4-4 4M20 16H5m0 0 4 4m-4-4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>conversor<span class="brand-period">.</span></span>
+        </a>
+        <span class="topbar-note"><span class="status-dot"></span> Conversión precisa, al instante</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">UNA HERRAMIENTA, TODAS LAS MEDIDAS</p>
+        <h1>Las unidades,<br /><span>en su justa medida.</span></h1>
+        <p class="intro-copy">Convierte entre sistemas y magnitudes sin complicaciones.</p>
+      </section>
+
+      <section class="converter-card" aria-labelledby="converter-title">
+        <div class="card-heading">
+          <div>
+            <p class="section-label">CONVERSOR</p>
+            <h2 id="converter-title">¿Qué quieres convertir?</h2>
+          </div>
+          <label class="category-control">
+            <span class="sr-only">Categoría de unidades</span>
+            <select id="category-select"></select>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+          </label>
+        </div>
+
+        <form id="conversion-form">
+          <div class="conversion-row">
+            <label class="unit-panel" for="input-value">
+              <span class="field-label">TENGO</span>
+              <input id="input-value" type="number" step="any" value="1" inputmode="decimal" autocomplete="off" />
+              <span class="select-wrap">
+                <select id="from-unit" aria-label="Unidad de origen"></select>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+              </span>
+            </label>
+
+            <button class="swap-button" id="swap-button" type="button" aria-label="Intercambiar unidades">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 7h12m0 0-4-4m4 4-4 4M17 17H5m0 0 4 4m-4-4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div class="unit-panel result-panel" aria-live="polite">
+              <span class="field-label">QUIERO</span>
+              <output id="result-value">1</output>
+              <label class="select-wrap" for="to-unit">
+                <span class="sr-only">Unidad de destino</span>
+                <select id="to-unit" aria-label="Unidad de destino"></select>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+              </label>
+            </div>
+          </div>
+          <div class="conversion-footer">
+            <p id="conversion-status" role="status">El resultado se actualiza automáticamente.</p>
+            <button class="copy-button" id="copy-button" type="button">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="9" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" /><path d="M13 7V5.5A1.5 1.5 0 0 0 11.5 4h-6A1.5 1.5 0 0 0 4 5.5v7A1.5 1.5 0 0 0 5.5 14H7" stroke="currentColor" stroke-width="1.5" /></svg>
+              <span>Copiar resultado</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="feature-row" aria-label="Ventajas">
+        <article class="feature">
+          <span class="feature-icon icon-purple" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 14.6 9l5.9.9-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2 5.9-.9L12 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+          </span>
+          <div><h3>Claro y sencillo</h3><p>Elige una magnitud, introduce el valor y listo.</p></div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon icon-green" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18m0-18c-3.1 3.4-4.3 6.4-4.3 9s1.2 5.6 4.3 9m0-18c3.1 3.4 4.3 6.4 4.3 9s-1.2 5.6-4.3 9M4.5 8h15M4.5 16h15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+          </span>
+          <div><h3>De aquí y de allá</h3><p>Sistema métrico e imperial, lado a lado.</p></div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon icon-orange" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v10m0 0a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0-10a2 2 0 0 0-2 2v8.1a5.5 5.5 0 1 0 4 0V5a2 2 0 0 0-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+          </span>
+          <div><h3>Conversiones fiables</h3><p>Con resultados al momento, sin rodeos.</p></div>
+        </article>
+      </section>
+
+      <footer>Hecho para medir mejor <span aria-hidden="true">·</span> Conversor de unidades</footer>
+    </main>
+  </body>
+</html>
